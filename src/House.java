@@ -5,14 +5,16 @@ public class House {
     private int squareFeet;
     private int bedrooms;
     private int bathrooms;
+    private double correlation;
 
-    public House(String address, double price, double rentEstimate, int squareFeet, int bedrooms, int bathrooms){
+    public House(String address, double price, double rentEstimate, int squareFeet, int bedrooms, int bathrooms, double correlation){
         this.address = address;
         this.price = price;
         this.rentEstimate = rentEstimate;
         this.squareFeet = squareFeet;
         this.bedrooms = bedrooms;
         this.bathrooms = bathrooms;
+        this.correlation = correlation;
     }
 
     public double getPrice(){
@@ -33,5 +35,9 @@ public class House {
 
     public int getBathrooms(){
         return bathrooms;
+    }
+
+    public double getCorrelation(){
+        return correlation;
     }
 }
