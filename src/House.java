@@ -40,4 +40,34 @@ public class House {
     public double getCorrelation(){
         return correlation;
     }
+
+    public int getHouseScore(){
+        int score;
+        double difference = getPrice() - getRentEstimate(); //if diff is positive bad deal if diff is negative good deal
+
+        if(difference < -500){
+            score = 10;
+        } else if(difference < -400 && difference >= -500){
+            score = 9;
+        } else if(difference < -250 && difference >= -400){
+            score = 8;
+        } else if(difference < -150 && difference >= -250) {
+            score = 7;
+        }else if(difference < -51 && difference > -150) {
+            score = 6;
+        }else if(Math.abs(difference) <= 50) {
+            score = 5;
+        } else if(difference > 50 && difference <= 150){
+            score = 4;
+        } else if(difference > 150 && difference <= 250){
+            score = 3;
+        } else if(difference > 250 && difference <= 400){
+            score = 2;
+        } else if(difference > 400){
+            score = 1;
+        } else{
+            score = 0;
+        }
+        return score;
+    }
 }
